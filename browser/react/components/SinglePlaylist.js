@@ -37,7 +37,7 @@ render () {
         <Songs songs={playlist.songs} /> {/** Hooray for reusability! */}
         { playlist.songs && !playlist.songs.length && <small>No songs.</small> }
         <hr />
-        <AddSongForm />
+        <AddSongForm playlist={playlist}/>
       </div>
     )
 }

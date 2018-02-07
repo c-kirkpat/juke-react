@@ -11,12 +11,9 @@ export default class AddSongForm extends Component {
     }
     onSubmit(e){
         e.preventDefault();
-        const hash = window.location.hash
-        const id = hash.slice(hash.lastIndexOf('/') + 1);
-        console.log(this.state.inputValue);
+        const id = this.props.playlist.id;
         let song = this.state.songs.find(song=> song.id === +this.state.inputValue)
         axios.post(`/api/playlists/${id}/songs`, song)
-        .then(res => console.log('success'));
       }
     
       handleChange(e){
